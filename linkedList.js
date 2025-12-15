@@ -1,4 +1,4 @@
-export function linkedList (Node = new node()){
+export function linkedList (Node = null){
     
     let headNode = Node;
 
@@ -13,7 +13,7 @@ export function linkedList (Node = new node()){
     }
 
     const append = function(value){
-        if(headNode.value == null) {return headNode = new node(value);}
+        if(headNode == null) {return headNode = new node(value);}
         let lastNode = headNode;
         while (lastNode.next != null){
             lastNode = lastNode.next
@@ -22,6 +22,7 @@ export function linkedList (Node = new node()){
     }
 
     const prepend = function(value){
+        if(headNode == null) return headNode = new node(value);
         let nextNode = headNode;
         headNode = new node(value, nextNode);
     }
